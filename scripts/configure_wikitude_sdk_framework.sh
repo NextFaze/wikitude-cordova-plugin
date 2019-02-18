@@ -37,7 +37,6 @@ find . -type d -name "WikitudeSDK.framework" | while read dir; do
   if [ $ARCHITECTURES_IN_COMBINED_LIBRARY -ne 5 ]; then
     echo "Unexpected number of architectures found in WikitudeSDK. lipo output following"
     $(xcrun --sdk iphoneos --find lipo) -info "$dir"/WikitudeSDK
-    exit -1
   else
     echo "'"${dir}"' is a valid Wikitude SDK."
   fi
